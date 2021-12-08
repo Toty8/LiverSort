@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- This comment is our first change on the repo -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm" id="myForm">
+        <p>B:</p>
+        <input type="text" id="b" style="border:3px solid purple; text-align:center; font-size:1em;"/>
+        <br>
+        <br>
+        <p>HB:</p>
+        <input type="text" id="Hb" style="border:3px solid purple; text-align:center; font-size:1em;"/>
+        <br>
+        <br>
+        <p>Result:</p>
+        <h5 id="result"></h5>
+        <button type="button" onclick="sum()">Sum</button>
+        <button onclick="clear()">Clear</button>
+    </form>
+        <script>
+            function sum()
+            {
+                let b = Number(document.getElementById("b").value);
+                let hb = Number(document.getElementById("Hb").value);
+                let sum = "Error"
+                if (b > 0 && hb > 0 ) {
+                    sum = (b * hb).toFixed(2);
+                }
+                document.getElementById("result").innerHTML = sum;
+            }
+            function clear()
+            {
+                document.getElementsByName("myForm").reset;
+            }
+        </script>
+</body>
+</html>
